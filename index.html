@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ WARNING: SYSTEM BREACH DETECTED</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .terminal {
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            padding-top: 20%;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        #inputField {
+            color: white;
+            background-color: black;
+            border: none;
+            border-bottom: 2px solid lime;
+            outline: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <p>⚠️ WARNING: UNAUTHORIZED REMOTE ACCESS DETECTED</p>
+        <p>User: [his_mac_username]</p>
+        <p>Device: Mac M2 Chip</p>
+        <p>IP Address: [random IP generated]</p>
+        <p>Location: Traced to Bengaluru, Wilson Garden, India</p>
+
+        <p>▸ Initiating data sync to dark web servers...</p>
+        <p>▸ Accessing webcam...</p>
+        <p>▸ Extracting saved passwords...</p>
+        <p>▸ Injecting backdoor...</p>
+        <p>▸ Encrypting system files...</p>
+
+        <p>🕒 SYSTEM LOCKDOWN IN PROGRESS...</p>
+        <p>To stop this, enter override code below:</p>
+        <p>Failure to respond within 30 seconds will result in permanent data loss.</p>
+
+        <br><br>
+        <p>Enter override code: <input type="text" id="inputField" autofocus></p>
+    </div>
+
+    <script>
+        let correctCode = "SIRI";
+        let inputField = document.getElementById("inputField");
+        let incorrectAttempts = 0;
+        let timeout;
+        
+        inputField.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                let userCode = inputField.value.toUpperCase();
+                if (userCode === correctCode) {
+                    alert("🎉 GOTCHA!\n\nYou’ve been pranked by your genius friend.\nNext time, think twice before leaving your Mac unprotected 😉\n\n-- White Hat Hackers Society 😎");
+                    location.reload();
+                } else {
+                    incorrectAttempts++;
+                    alert("❌ Incorrect code. The system will continue its lockdown.");
+                    
+                    // Funny surprise if user fails 3 times
+                    if (incorrectAttempts >= 3) {
+                        setTimeout(() => {
+                            alert("💥 SYSTEM OVERLOAD!\n\nYour Mac has suspected malicious activity. Please contact IT support immediately.");
+                        }, 500);
+                    }
+                    
+                    // More random pop-ups every time they fail
+                    if (incorrectAttempts === 5) {
+                        alert("🐍 Warning: A deadly snake is about to enter your keyboard... Kidding. But still, enter the correct code.");
+                    }
+
+                    // Humorous popup about the state of the system
+                    if (incorrectAttempts === 7) {
+                        alert("🎮 Warning: Your Mac has just been turned into a gaming console. All apps are now converted to Tetris.");
+                    }
+                }
+            }
+        });
+
+        // Block the user from closing the tab continuously
+        window.onbeforeunload = function() {
+            return "⚠️ Are you sure you want to leave? The system is under attack!";
+        };
+
+        // Keep triggering popups every few seconds to create a feeling of being trapped
+        setInterval(function() {
+            alert("⚠️ WARNING: Unauthorized access detected. You cannot leave this page.");
+        }, 3000);  // Pop up alert every 3 seconds
+
+        // Make it full-screen mode to make it harder for them to close
+        document.documentElement.requestFullscreen();
+
+        // Time-based surprise after 30 seconds
+        timeout = setTimeout(() => {
+            alert("💥 SYSTEM FAILURE: Over 30 seconds without code entry.\nYour Mac is now a toaster. Enjoy your breakfast!");
+        }, 30000);  // 30 seconds
+
+    </script>
+</body>
+</html>
